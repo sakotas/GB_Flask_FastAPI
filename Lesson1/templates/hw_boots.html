@@ -1,0 +1,20 @@
+{%  extends 'hw_base.html' %}
+
+{% block title %}
+Ботинки
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h1 class="col-12 text-monospace text-center">Ассортимент Ботинок</h1>
+    {% for item in context %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>{{item.title}}</h2>
+        <ul>
+            <li>Комментарий: {{item.comment}}</li>
+            <li>Стоимость: {{item.price}}</li>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

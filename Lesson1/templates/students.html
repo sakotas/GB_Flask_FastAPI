@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенты</title>
+</head>
+<body>
+<div class="row">
+    <h1 class="col-12 text-monospace text-center">Список студентов</h1>
+    {% for user in users %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>{{user.name}} {{ user.surname }}</h2>
+        <ul>
+            <li>Возраст: {{user.age}}</li>
+            <li>Средний балл: {{user.rating}}</li>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
