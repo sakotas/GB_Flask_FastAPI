@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} {{ task }} {% endblock title %}
+
+{% block content %}
+<h1>{{ task }}. {{ description }} </h1>
+<form action="/login_password" method="post">
+    <input type="email" name="login" placeholder="Логин">
+    <input type="password" name="password" placeholder="Пароль">
+    <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
+</form>
+{% endblock content %}

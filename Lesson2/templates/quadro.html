@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} {{ task }} {% endblock title %}
+
+{% block content %}
+<h1>{{ task }}. {{ description }} </h1>
+<form action="/quadro" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <input type="number" name="number" placeholder="Number">
+    <input type="submit" value="Отправить">
+</form>
+{% endblock content %}

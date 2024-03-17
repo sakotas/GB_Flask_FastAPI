@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %} {{ task }} {% endblock title %}
+
+{% block content %}
+<h1>{{ task }}. {{ description }} </h1>
+<form action="/text_count" method="post">
+    <textarea name="text" placeholder="Текст" rows="5" cols="30"></textarea>
+    <input type="submit" value="Отправить">
+</form>
+{% endblock content %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для POST запроса</title>
+</head>
+<body>
+<form action="/submit" method="post">
+<h1>{{ task }}. {{ description }} </h1>
+<form action="/quadro" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <input type="number" name="number" placeholder="Number">
+    <input type="submit" value="Отправить">
+</form>
+</form>
+</body>
+</html>
